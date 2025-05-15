@@ -4,7 +4,6 @@ import React from 'react';
 import { Panel } from '@/components/ui/Panel';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import type { Metadata } from 'next';
 
 const modules = [
   {
@@ -38,11 +37,6 @@ const modules = [
     readiness: 15,
   },
 ];
-
-export const metadata: Metadata = {
-  title: 'War Room',
-  description: 'Command center for dispute operations',
-};
 
 export default function WarRoom() {
   return (

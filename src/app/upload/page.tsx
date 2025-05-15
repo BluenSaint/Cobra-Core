@@ -4,18 +4,12 @@ import React, { useState } from 'react';
 import { Panel } from '@/components/ui/Panel';
 import { Card } from '@/components/ui/Card';
 import { FileUpload } from '@/components/upload/FileUpload';
-import type { Metadata } from 'next';
 
 interface UploadedFile {
   file: File;
   status: 'uploading' | 'success' | 'error';
   progress: number;
 }
-
-export const metadata: Metadata = {
-  title: 'Upload Center',
-  description: 'Secure document upload facility',
-};
 
 export default function Upload() {
   const [files, setFiles] = useState<UploadedFile[]>([]);
