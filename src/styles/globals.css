@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-military-950 text-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded font-bold transition-all duration-200 ease-in-out;
+  }
+
+  .btn-primary {
+    @apply bg-accent-primary text-black hover:bg-opacity-90;
+  }
+
+  .btn-secondary {
+    @apply bg-military-700 text-white hover:bg-military-600;
+  }
+
+  .card {
+    @apply bg-military-800 rounded-lg border border-military-600 shadow-military transition-all duration-200 hover:border-accent-primary;
+  }
+
+  .panel {
+    @apply bg-military-800 rounded-lg border border-military-600 p-6 shadow-military;
+  }
+
+  .input {
+    @apply bg-military-700 border border-military-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-primary;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-primary to-accent-secondary;
+  }
+} 

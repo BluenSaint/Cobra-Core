@@ -1,8 +1,9 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import './globals.css';
-import ClientWrapper from './components/ClientWrapper';
 import { Inter, Space_Grotesk } from 'next/font/google';
+import { Navigation } from '@/components/layout/Navigation';
+import { motion } from 'framer-motion';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const spaceGrotesk = Space_Grotesk({
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Project Cobra Core',
   description: 'Military-grade dispute management system',
   viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#0A0C0F',
+  themeColor: '#0a0f1c',
 };
 
 export default function RootLayout({
@@ -24,10 +25,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-military-900 text-white antialiased min-h-screen">
-        <ClientWrapper>
+      <body className="bg-military-950 text-white antialiased min-h-screen">
+        <Navigation />
+        <motion.main
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="pt-16"
+        >
           {children}
-        </ClientWrapper>
+        </motion.main>
       </body>
     </html>
   );
