@@ -47,18 +47,18 @@ export default function WarRoom() {
       setModules((currentModules) => {
         const moduleIndex = Math.floor(Math.random() * currentModules.length);
         const newModules = [...currentModules];
-        const module = { ...newModules[moduleIndex] };
+        const moduleData = { ...newModules[moduleIndex] };
         
         // Randomly adjust readiness
-        module.readiness = Math.min(100, Math.max(0, module.readiness + (Math.random() > 0.5 ? 5 : -5)));
+        moduleData.readiness = Math.min(100, Math.max(0, moduleData.readiness + (Math.random() > 0.5 ? 5 : -5)));
         
         // Update status based on readiness
-        if (module.readiness >= 90) module.status = 'READY';
-        else if (module.readiness < 20) module.status = 'FAILED';
-        else module.status = 'WAITING';
+        if (moduleData.readiness >= 90) moduleData.status = 'READY';
+        else if (moduleData.readiness < 20) moduleData.status = 'FAILED';
+        else moduleData.status = 'WAITING';
         
-        module.lastUpdate = new Date();
-        newModules[moduleIndex] = module;
+        moduleData.lastUpdate = new Date();
+        newModules[moduleIndex] = moduleData;
         return newModules;
       });
 
