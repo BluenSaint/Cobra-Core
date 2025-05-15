@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', 'sans-serif'],
-        heading: ['Space Grotesk', 'sans-serif'],
+        sans: ['var(--font-inter)'],
+        heading: ['var(--font-space-grotesk)'],
       },
       colors: {
         military: {

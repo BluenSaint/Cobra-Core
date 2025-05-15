@@ -5,7 +5,16 @@ import { Panel } from '@/components/ui/Panel';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
-const modules = [
+type ModuleStatus = 'default' | 'warning' | 'error' | 'success';
+
+interface Module {
+  title: string;
+  description: string;
+  status: ModuleStatus;
+  readiness: number;
+}
+
+const modules: Module[] = [
   {
     title: 'AI Commander',
     description: 'Automated dispute strategy and execution',
