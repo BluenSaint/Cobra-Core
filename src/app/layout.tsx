@@ -1,21 +1,17 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
-import { Navigation } from '@/components/layout/Navigation';
-import { motion } from 'framer-motion';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Project Cobra Core',
-  description: 'Military-grade dispute management system',
+  title: 'Cobra Core',
+  description: 'A powerful and flexible application framework',
   viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#0a0f1c',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -24,17 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`dark ${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-military-950 text-white antialiased min-h-screen">
-        <Navigation />
-        <motion.main
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="pt-16"
-        >
+    <html lang="en">
+      <body className={inter.className}>
+        <main className="min-h-screen bg-white dark:bg-gray-900">
           {children}
-        </motion.main>
+        </main>
       </body>
     </html>
   );
